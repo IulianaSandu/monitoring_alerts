@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparație Performanță Modele</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparație Performanță Modele de Detecție a Anomaliilor</h1>
+
+    <h2>Performanță Modelul Isolation Forest</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metrică</th>
+                <th>Valoare</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Acuratețe</td><td>{{ isolation_forest_metrics[0] }}</td></tr>
+            <tr><td>F1-Score</td><td>{{ isolation_forest_metrics[1] }}</td></tr>
+            <tr><td>Precizie</td><td>{{ isolation_forest_metrics[2] }}</td></tr>
+            <tr><td>Recall</td><td>{{ isolation_forest_metrics[3] }}</td></tr>
+            <tr><td>ROC AUC</td><td>{{ isolation_forest_metrics[4] }}</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Performanță Modelul One-Class SVM</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metrică</th>
+                <th>Valoare</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Acuratețe</td><td>{{ one_class_svm_metrics[0] }}</td></tr>
+            <tr><td>F1-Score</td><td>{{ one_class_svm_metrics[1] }}</td></tr>
+            <tr><td>Precizie</td><td>{{ one_class_svm_metrics[2] }}</td></tr>
+            <tr><td>Recall</td><td>{{ one_class_svm_metrics[3] }}</td></tr>
+            <tr><td>ROC AUC</td><td>{{ one_class_svm_metrics[4] }}</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Performanță Modelul LOF (Local Outlier Factor)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metrică</th>
+                <th>Valoare</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Acuratețe</td><td>{{ lof_metrics[0] }}</td></tr>
+            <tr><td>F1-Score</td><td>{{ lof_metrics[1] }}</td></tr>
+            <tr><td>Precizie</td><td>{{ lof_metrics[2] }}</td></tr>
+            <tr><td>Recall</td><td>{{ lof_metrics[3] }}</td></tr>
+            <tr><td>ROC AUC</td><td>{{ lof_metrics[4] }}</td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
